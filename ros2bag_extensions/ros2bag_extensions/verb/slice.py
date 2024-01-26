@@ -27,7 +27,7 @@ class SliceVerb(VerbExtension):
     ''' Save the specified range of data as a bag file by specifying the start time and end time. '''
     def _bag2slice_with_start_end_time(self, input_bag_dir: str, output_bag_dir: str, start_time: datetime.datetime, end_time: datetime.datetime) -> None:
         # Check timestamp
-        metadata = Info().read_metadata(input_bag_dir, "sqlite3")
+        metadata = Info().read_metadata(input_bag_dir, "mcap")
 
         if start_time < metadata.starting_time:
             print("No valid start time set. Start time automatically set the bag start time.")

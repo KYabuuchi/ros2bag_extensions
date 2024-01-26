@@ -35,10 +35,10 @@ def get_default_converter_options() -> ConverterOptions:
 def get_default_storage_options(uri: str) -> StorageOptions:
     return StorageOptions(
         uri=uri,
-        storage_id="sqlite3",
+        storage_id="mcap",
     )
 
 
 def get_starting_time(uri: str) -> datetime:
-    info = Info().read_metadata(uri, "sqlite3")
+    info = Info().read_metadata(uri, "mcap")
     return info.starting_time
